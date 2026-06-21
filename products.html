@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Piyal Stores (Pvt) Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar" class="scrolled">
+        <div class="logo">
+            <span class="name">PIYAL STORES</span>
+            <span class="sub">(PVT) LTD</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-banner">
+        <div class="container text-center">
+            <h1>Our Export Catalog</h1>
+            <p>Premium Sri Lankan Agricultural Products Sourced for Excellence</p>
+        </div>
+    </header>
+
+    <section class="products-list">
+        <div class="container">
+            <div class="product-grid-full">
+                <!-- Spices -->
+                <div class="product-item">
+                    <div class="p-wrap">
+                        <img src="cinnamon.jpg" alt="Ceylon Cinnamon" class="p-img-main">
+                        <div class="p-info">
+                            <span class="p-cat">Spice</span>
+                            <h3>Ceylon Cinnamon</h3>
+                            <p>Hand-peeled, premium quality "Alba" or "C5 Special" grades of authentic Ceylon Cinnamon. Sourced directly from local plantations.</p>
+                            <a href="contact.html?product=cinnamon" class="btn btn-outline btn-sm">Send Inquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="p-wrap">
+                        <img src="black_pepper.jpg" alt="Black Pepper" class="p-img-main">
+                        <div class="p-info">
+                            <span class="p-cat">Spice</span>
+                            <h3>Black Pepper</h3>
+                            <p>Premium grade black pepper with high piperine content, known for its bold pungency and fruity aroma.</p>
+                            <a href="contact.html?product=pepper" class="btn btn-outline btn-sm">Send Inquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="p-wrap">
+                        <img src="cloves.jpg" alt="Cloves" class="p-img-main">
+                        <div class="p-info">
+                            <span class="p-cat">Spice</span>
+                            <h3>Cloves</h3>
+                            <p>Hand-picked Ceylon cloves with rich essential oils, perfect for culinary and pharmaceutical applications.</p>
+                            <a href="contact.html?product=cloves" class="btn btn-outline btn-sm">Send Inquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="p-wrap">
+                        <img src="cardamom.jpg" alt="Cardamom" class="p-img-main">
+                        <div class="p-info">
+                            <span class="p-cat">Spice</span>
+                            <h3>Cardamom</h3>
+                            <p>Green cardamom pods with a unique citrusy aroma and strong flavor profile unique to Sri Lanka.</p>
+                            <a href="contact.html?product=cardamom" class="btn btn-outline btn-sm">Send Inquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grains/Agricultural -->
+                <div class="product-item">
+                    <div class="p-wrap">
+                        <img src="rice.jpg" alt="Sri Lankan Rice" class="p-img-main">
+                        <div class="p-info">
+                            <span class="p-cat">Grain</span>
+                            <h3>Sri Lankan Rice</h3>
+                            <p>Traditional rice varieties including Samba, Keeri Samba, and Red Rice, processed with modern milling technology.</p>
+                            <a href="contact.html?product=rice" class="btn btn-outline btn-sm">Send Inquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="p-wrap">
+                        <img src="grains.jpg" alt="Grains & Pulses" class="p-img-main">
+                        <div class="p-info">
+                            <span class="p-cat">Commodity</span>
+                            <h3>Grains & Pulses</h3>
+                            <p>Reliable supply of various grains and agricultural commodities for industrial food production.</p>
+                            <a href="contact.html?product=grains" class="btn btn-outline btn-sm">Send Inquiry</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-placeholder"></footer>
+
+    <style>
+        .page-banner { background: var(--bg-soft); padding: 150px 5% 60px; text-align: center; }
+        .page-banner h1 { font-size: 3rem; color: var(--primary-green); margin-bottom: 10px; }
+        .products-list { padding: 80px 5%; }
+        .product-grid-full { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        .product-item { background: white; border-radius: 15px; overflow: hidden; border: 1px solid #eee; transition: var(--transition-smooth); }
+        .product-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--secondary-gold); }
+        .p-wrap { display: flex; flex-direction: column; height: 100%; }
+        .p-img-main { width: 100%; height: 250px; object-fit: cover; }
+        .p-placeholder { width: 100%; height: 250px; background: #f0f3f2; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #cbd5e0; }
+        .p-info { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .p-cat { color: var(--secondary-gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .p-info h3 { margin-bottom: 15px; color: var(--primary-green); }
+        .p-info p { color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem; line-height: 1.5; }
+        .btn-sm { align-self: flex-start; padding: 0.7rem 1.5rem; font-size: 0.8rem; }
+    </style>
+
+    <script>
+        fetch('footer.html').then(r => r.text()).then(html => document.getElementById('footer-placeholder').innerHTML = html);
+    </script>
+</body>
+</html>

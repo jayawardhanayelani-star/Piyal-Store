@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Piyal Stores (Pvt) Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar" class="scrolled">
+        <div class="logo">
+            <span class="name">PIYAL STORES</span>
+            <span class="sub">(PVT) LTD</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-banner">
+        <div class="container text-center">
+            <h1>Our Gallery</h1>
+            <p>A Glimpse into Our Operations, Products, and Export Packaging</p>
+        </div>
+    </header>
+
+    <section class="gallery-section">
+        <div class="gallery-grid">
+            <!-- These would normally be real images, using placeholders/hero for demo -->
+            <div class="gallery-item"><img src="hero.png" alt="Spice Export"></div>
+            <div class="gallery-item"><img src="black_pepper.png" alt="Black Pepper Quality"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&q=80&w=800" alt="Export Packaging"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Company Operations"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Logistics"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1579154235823-6085fe9f8fc3?auto=format&fit=crop&q=80&w=800" alt="Quality Assurance"></div>
+        </div>
+    </section>
+
+    <footer id="footer-placeholder"></footer>
+
+    <style>
+        .page-banner { background: var(--bg-soft); padding: 150px 5% 60px; text-align: center; }
+        .gallery-section { padding: 60px 5%; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { height: 300px; border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; border: 1px solid #eee; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth); }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .g-placeholder { width: 100%; height: 100%; background: #f8f9fa; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #cbd5e0; }
+        .g-placeholder i { font-size: 3rem; margin-bottom: 10px; }
+        .g-placeholder span { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+    </style>
+
+    <script>
+        fetch('footer.html').then(r => r.text()).then(html => document.getElementById('footer-placeholder').innerHTML = html);
+    </script>
+</body>
+</html>

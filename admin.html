@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Piyal Stores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --gold: #d4af37;
+            --bg: #f8fafc;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        .sidebar { width: 250px; height: 100vh; background: #1b1b1b; color: white; position: fixed; padding: 30px; }
+        .sidebar h2 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 40px; }
+        .main { margin-left: 250px; padding: 50px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        h1 { color: var(--primary); margin-bottom: 30px; }
+        .upload-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .upload-item { border: 1px solid #eee; padding: 20px; border-radius: 10px; text-align: center; }
+        .upload-item h4 { margin-bottom: 15px; color: #333; }
+        .file-input { display: none; }
+        .file-label { display: block; padding: 10px 20px; background: var(--bg); border: 2px dashed #cbd5e0; border-radius: 8px; cursor: pointer; margin-bottom: 15px; transition: 0.3s; }
+        .file-label:hover { border-color: var(--primary); background: #ebf8f2; }
+        .btn-upload { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; width: 100%; transition: 0.3s; }
+        .btn-upload:hover { background: #1e4534; transform: translateY(-2px); }
+        .status { margin-top: 10px; font-size: 0.85rem; display: none; }
+        .status.success { color: #48bb78; display: block; }
+        .status.error { color: #f56565; display: block; }
+        .pw-section { margin-bottom: 30px; }
+        input[type="password"] { padding: 10px; border-radius: 5px; border: 1px solid #ddd; width: 300px; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Piyal Admin</h2>
+        <p><i class="fas fa-image"></i> Image Manager</p>
+        <p><a href="index.html" style="color:#718096; text-decoration:none;"><i class="fas fa-external-link-alt"></i> View Website</a></p>
+    </div>
+
+    <div class="main">
+        <h1>Website Image Manager</h1>
+        
+        <div class="pw-section">
+            <label>Admin Password:</label><br>
+            <input type="password" id="admin-pw" placeholder="Enter password to upload">
+        </div>
+
+        <div class="card">
+            <h3>Update Product Images</h3>
+            <div class="upload-grid">
+                <!-- Cinnamon -->
+                <div class="upload-item">
+                    <h4>Ceylon Cinnamon</h4>
+                    <label for="cinnamon-file" class="file-label" id="label-cinnamon">Choose Image</label>
+                    <input type="file" id="cinnamon-file" class="file-input" onchange="updateLabel('cinnamon')">
+                    <button class="btn-upload" onclick="uploadImage('cinnamon-file', 'cinnamon.jpg', 'cinnamon-status')">Update Image</button>
+                    <div id="cinnamon-status" class="status"></div>
+                </div>
+
+                <!-- Pepper -->
+                <div class="upload-item">
+                    <h4>Black Pepper</h4>
+                    <label for="pepper-file" class="file-label" id="label-pepper">Choose Image</label>
+                    <input type="file" id="pepper-file" class="file-input" onchange="updateLabel('pepper')">
+                    <button class="btn-upload" onclick="uploadImage('pepper-file', 'black_pepper.jpg', 'pepper-status')">Update Image</button>
+                    <div id="pepper-status" class="status"></div>
+                </div>
+
+                <!-- Cloves -->
+                <div class="upload-item">
+                    <h4>Ceylon Cloves</h4>
+                    <label for="cloves-file" class="file-label" id="label-cloves">Choose Image</label>
+                    <input type="file" id="cloves-file" class="file-input" onchange="updateLabel('cloves')">
+                    <button class="btn-upload" onclick="uploadImage('cloves-file', 'cloves.jpg', 'cloves-status')">Update Image</button>
+                    <div id="cloves-status" class="status"></div>
+                </div>
+
+                <!-- Cardamom -->
+                <div class="upload-item">
+                    <h4>Cardamom</h4>
+                    <label for="cardamom-file" class="file-label" id="label-cardamom">Choose Image</label>
+                    <input type="file" id="cardamom-file" class="file-input" onchange="updateLabel('cardamom')">
+                    <button class="btn-upload" onclick="uploadImage('cardamom-file', 'cardamom.jpg', 'cardamom-status')">Update Image</button>
+                    <div id="cardamom-status" class="status"></div>
+                </div>
+
+                <!-- Rice -->
+                <div class="upload-item">
+                    <h4>Sri Lankan Rice</h4>
+                    <label for="rice-file" class="file-label" id="label-rice">Choose Image</label>
+                    <input type="file" id="rice-file" class="file-input" onchange="updateLabel('rice')">
+                    <button class="btn-upload" onclick="uploadImage('rice-file', 'rice.jpg', 'rice-status')">Update Image</button>
+                    <div id="rice-status" class="status"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Update Hero Background</h3>
+            <div class="upload-item" style="max-width: 400px;">
+                <h4>Main Home Banner</h4>
+                <label for="hero-file" class="file-label" id="label-hero">Choose Hero Image</label>
+                <input type="file" id="hero-file" class="file-input" onchange="updateLabel('hero')">
+                <button class="btn-upload" onclick="uploadImage('hero-file', 'hero.png', 'hero-status')">Update Banner</button>
+                <div id="hero-status" class="status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateLabel(id) {
+            const input = document.getElementById(id + '-file');
+            const label = document.getElementById('label-' + id);
+            if (input.files.length > 0) {
+                label.innerText = input.files[0].name;
+                label.style.borderColor = '#2d6a4f';
+            }
+        }
+
+        async function uploadImage(inputId, targetFileName, statusId) {
+            const fileInput = document.getElementById(inputId);
+            const statusDiv = document.getElementById(statusId);
+            const passwordInput = document.getElementById('admin-pw');
+            
+            if (fileInput.files.length === 0) {
+                alert('Please select a file first.');
+                return;
+            }
+
+            if (!passwordInput.value) {
+                alert('Please enter the admin password.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+            formData.append('targetFileName', targetFileName);
+            formData.append('password', passwordInput.value);
+
+            statusDiv.innerText = 'Uploading...';
+            statusDiv.className = 'status';
+            statusDiv.style.display = 'block';
+
+            try {
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    statusDiv.innerText = 'Image updated successfully!';
+                    statusDiv.className = 'status success';
+                    setTimeout(() => location.reload(), 1500);
+                } else {
+                    const errorMsg = await response.text();
+                    statusDiv.innerText = 'Upload failed: ' + errorMsg;
+                    statusDiv.className = 'status error';
+                }
+            } catch (error) {
+                statusDiv.innerText = 'Error connecting to server.';
+                statusDiv.className = 'status error';
+            }
+        }
+    </script>
+</body>
+</html>

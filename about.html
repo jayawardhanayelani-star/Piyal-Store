@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Piyal Stores (Pvt) Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar" class="scrolled">
+        <div class="logo">
+            <span class="name">PIYAL STORES</span>
+            <span class="sub">(PVT) LTD</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="about-header section-title">
+        <div class="container">
+            <h2>Our Heritage & Commitment</h2>
+            <p>Exporting Sri Lanka's finest agricultural treasures since 2026.</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Piyal Stores (Pvt) Ltd is a Sri Lankan company specializing in exporting high-quality spices, grains, and agricultural commodities. Founded on the principles of quality, integrity, and sustainability, we connect the hard work of Sri Lankan farmers with the global market.</p>
+                <p>Under the leadership of our Managing Director, <strong>W.A.K. Piyal Ranjith</strong>, we have grown into a trusted name in the international spice trade, known for our uncompromising standards and reliable delivery.</p>
+                
+                <div class="md-quote">
+                    <p>"Our goal is to ensure that every grain and spice we export represents the rich heritage and superior quality of Sri Lankan agriculture."</p>
+                    <span>— W.A.K. Piyal Ranjith, Managing Director</span>
+                </div>
+            </div>
+            <div class="about-info-box">
+                <div class="info-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Our Mission</h4>
+                    <p>To provide high-quality Sri Lankan agricultural products to the world while supporting local farming communities through sustainable trade practices.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-eye"></i>
+                    <h4>Our Vision</h4>
+                    <p>To be the leading global partner for Sri Lankan spices and commodities, setting the standard for quality and ethical exports.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Why Choose Us</h4>
+                    <ul>
+                        <li>Direct Sourcing from Farmers</li>
+                        <li>Certified Quality Control</li>
+                        <li>International Packaging Standards</li>
+                        <li>Competitive Pricing & Global Logistics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="address-section">
+        <div class="container text-center">
+            <h3>Registered Office</h3>
+            <p>Walasmulla Road, Middeniya, Sri Lanka</p>
+        </div>
+    </section>
+
+    <footer id="footer-placeholder"></footer>
+
+    <style>
+        .about-header { background: var(--bg-soft); padding: 150px 5% 80px; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .about-text h3 { font-size: 2rem; color: var(--primary-green); margin-bottom: 20px; }
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); }
+        .md-quote { border-left: 4px solid var(--secondary-gold); padding: 20px 30px; background: var(--bg-soft); margin-top: 40px; }
+        .md-quote p { font-style: italic; color: var(--text-dark); margin-bottom: 10px; }
+        .md-quote span { font-weight: 700; color: var(--primary-green); display: block; }
+        .info-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid #eee; }
+        .info-card i { font-size: 2rem; color: var(--secondary-gold); margin-bottom: 15px; }
+        .info-card h4 { color: var(--primary-green); margin-bottom: 15px; }
+        .info-card ul { padding-left: 20px; }
+        .info-card ul li { list-style: disc; margin-bottom: 8px; color: var(--text-muted); }
+        .address-section { text-align: center; background: var(--primary-green); color: white; padding: 60px 5%; }
+        .address-section h3 { color: var(--secondary-gold); margin-bottom: 15px; }
+        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+    </style>
+
+    <script>
+        // Simple footer include logic for demo
+        fetch('footer.html').then(r => r.text()).then(html => document.getElementById('footer-placeholder').innerHTML = html);
+    </script>
+</body>
+</html>
